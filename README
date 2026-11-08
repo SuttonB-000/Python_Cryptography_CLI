@@ -1,0 +1,39 @@
+# Python Short String Encryption CLI
+
+## What:
+  This is a small program to demonstrate encryption and decryption
+  of short strings using asymmetric and symmetric methods. I built this to 
+  explore asymmetric and symmetric encryption.
+
+## Features:
+  - Generate asym.or sym. keys
+  - Encrypt and Decrypt with *Fernet* or *RSA with OEAP padding*
+  - Copy and paste ciphertext as text
+  - Built in error catching for invalid input, missing keys, and failed decryption
+
+## Requirements:
+  - Python 3
+  - The cryptography packageqqqqqqqqqq
+
+## How it works:
+  Fernet uses symmetric encryption: the same secret key encrypts and decrypts a message.
+  It also authenticates tokens, so decryption fails if a token has been 
+  altered or was made with a different key.
+
+  RSA with OAEP uses asymmetric encryption: a public key encrypts a message, and the
+  matching private key decrypts it. RSA ciphertext is encoded as Base64 so it can be 
+  copied and pasted. Base64 is an encoding, not encryption.
+
+  Both methods accept plaintext shorter than 100 Python characters. RSA also has a 
+  byte-size limit: with the generated 2048-bit keys and OAEP using SHA-256, a message can contain at
+  most 190 UTF-8 bytes. Some characters use more than one byte, so a message can be under the character 
+  limit and still exceed the RSA limit.
+
+  The included .gitignore excludes generated keys, but it does not remove files already tracked by Git. 
+  Check your repository before committing.
+
+## Final Note:
+  This is a learning project and may not receive future support. Remember to keep private keys private
+  and backup up important information
+
+

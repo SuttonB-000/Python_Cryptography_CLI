@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+fernet.key
+rsa_private.pem
+rsa_public.pem
